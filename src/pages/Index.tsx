@@ -27,7 +27,7 @@ const Index = () => {
       description: "Традиционный расслабляющий массаж с использованием натуральных масел",
       duration: "60 мин",
       price: "4 500 ₽",
-      image: "/placeholder.svg"
+      image: "/img/95022065-e8a7-4390-b664-b3daf8fc2cb1.jpg"
     },
     {
       id: 2,
@@ -35,7 +35,7 @@ const Index = () => {
       description: "Комплексная процедура с цветочными экстрактами для полного расслабления",
       duration: "90 мин",
       price: "6 800 ₽",
-      image: "/placeholder.svg"
+      image: "/img/a3f71952-edfa-46f2-a55d-20074ab3a0c5.jpg"
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ const Index = () => {
       description: "Омолаживающие водные процедуры в японском стиле",
       duration: "45 мин",
       price: "3 200 ₽",
-      image: "/placeholder.svg"
+      image: "/img/710d572f-8963-4b24-ab6f-b826b3d41830.jpg"
     },
     {
       id: 4,
@@ -51,7 +51,7 @@ const Index = () => {
       description: "Процедуры с использованием эфирных масел и японских благовоний",
       duration: "50 мин",
       price: "3 800 ₽",
-      image: "/placeholder.svg"
+      image: "/img/bf6c45cf-56c5-4fc2-af30-dc8523d9091f.jpg"
     }
   ];
 
@@ -278,8 +278,12 @@ const Index = () => {
             {services.map((service, index) => (
               <Card key={service.id} className="border-spa-terracotta/20 hover:shadow-lg transition-all duration-300 animate-fade-in" style={{animationDelay: `${index * 100}ms`}}>
                 <CardHeader className="pb-4">
-                  <div className="w-full h-48 bg-gradient-to-br from-spa-cream to-spa-terracotta/20 rounded-lg mb-4 flex items-center justify-center">
-                    <Icon name="Flower" size={48} className="text-spa-terracotta" />
+                  <div className="w-full h-48 rounded-lg mb-4 overflow-hidden">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   <CardTitle className="font-playfair text-xl text-spa-charcoal">{service.title}</CardTitle>
                   <CardDescription className="text-spa-charcoal/70">
